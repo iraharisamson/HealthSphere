@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antenatal Care Unit | HealthSphere</title>
+    <meta name="description" content="Comprehensive antenatal care services for expecting mothers. Personalized pregnancy care, prenatal checkups, and maternal health support.">
+    <style>
+        :root {
+            --primary: #00796b;
+            --primary-light: #009688;
+            --secondary: #ffc107;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fc;
+            color: var(--dark);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/antenatal-hero.jpg') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: -50px auto 0;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .quick-link {
+            padding: 10px 20px;
+            background-color: var(--light);
+            border-radius: 50px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .quick-link:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        h3 {
+            color: var(--primary-light);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--gray);
+        }
+        
+        ul {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        li::before {
+            content: '\f138';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-light);
+            position: absolute;
+            left: 0;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        
+        .card {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .card h4 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .emergency-box {
+            background-color: #FFF3F3;
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .emergency-box h3 {
+            color: var(--accent);
+            margin-top: 0;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        
+        .contact-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0.8rem;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: var(--white);
+            text-decoration: none;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            main {
+                padding: 1.5rem;
+                margin-top: -30px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content fade-in">
+            <h1>Antenatal Care Unit</h1>
+            <p class="header-subtitle">Comprehensive care for expecting mothers and their babies</p>
+            <a href="appointment.php" class="cta-button">
+                <i class="fas fa-calendar-check"></i> Schedule an Appointment
+            </a>
+        </div>
+    </header>
+    
+    <main>
+        <div class="quick-links">
+            <a href="#about" class="quick-link">About Us</a>
+            <a href="#services" class="quick-link">Our Services</a>
+            <a href="#why-choose" class="quick-link">Why Choose Us</a>
+            <a href="#contact" class="quick-link">Contact</a>
+        </div>
+        
+        <section id="about">
+            <h2>About Our Antenatal Care</h2>
+            <p>Our Antenatal Care (ANC) Unit provides specialized care for expectant mothers throughout their pregnancy journey. We offer evidence-based medical care combined with compassionate support to ensure the health and well-being of both mother and baby.</p>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h4><i class="fas fa-heartbeat"></i> First Trimester Care</h4>
+                    <p>Early pregnancy assessments, dating scans, and screening for potential complications during the critical first 12 weeks.</p>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-baby"></i> Second Trimester Care</h4>
+                    <p>Detailed anomaly scans, fetal growth monitoring, and preparation for the coming months of pregnancy.</p>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-child"></i> Third Trimester Care</h4>
+                    <p>Preparation for delivery, fetal positioning checks, and monitoring for late-pregnancy complications.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services">
+            <h2>Our Antenatal Services</h2>
+            <p>We provide a comprehensive range of services to support you through every stage of your pregnancy:</p>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h4><i class="fas fa-stethoscope"></i> Routine Checkups</h4>
+                    <ul>
+                        <li>Blood pressure monitoring</li>
+                        <li>Urine tests</li>
+                        <li>Weight tracking</li>
+                        <li>Fetal heartbeat checks</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-utensils"></i> Nutritional Guidance</h4>
+                    <ul>
+                        <li>Personalized diet plans</li>
+                        <li>Supplement recommendations</li>
+                        <li>Weight management</li>
+                        <li>Special dietary needs</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-procedures"></i> Diagnostic Services</h4>
+                    <ul>
+                        <li>Ultrasound scans</li>
+                        <li>Blood tests</li>
+                        <li>Genetic screening</li>
+                        <li>Gestational diabetes testing</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-book"></i> Education & Classes</h4>
+                    <ul>
+                        <li>Childbirth preparation</li>
+                        <li>Breastfeeding workshops</li>
+                        <li>Newborn care training</li>
+                        <li>Pain management options</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="why-choose">
+            <h2>Why Choose Our ANC Unit?</h2>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h4><i class="fas fa-user-md"></i> Expert Team</h4>
+                    <p>Our board-certified obstetricians and midwives have extensive experience in maternal-fetal medicine.</p>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-clinic-medical"></i> Modern Facilities</h4>
+                    <p>State-of-the-art equipment including 3D/4D ultrasound and advanced fetal monitoring systems.</p>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-hands-helping"></i> Personalized Care</h4>
+                    <p>Individualized care plans tailored to your specific needs and pregnancy journey.</p>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-comments"></i> 24/7 Support</h4>
+                    <p>Round-the-clock access to our team for any pregnancy-related concerns or emergencies.</p>
+                </div>
+            </div>
+            
+            <div class="emergency-box">
+                <h3><i class="fas fa-exclamation-triangle"></i> Pregnancy Warning Signs</h3>
+                <p>Seek immediate medical attention if you experience: severe abdominal pain, vaginal bleeding, sudden swelling, severe headaches, or decreased fetal movement.</p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Our ANC Unit</h2>
+            <p>We're here to support you throughout your pregnancy journey. Reach out to us:</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>(256) 747 766 685</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>anc@healthsphere.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>121 Kakira, Kakira Town, Jinja</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="emergency-box" id="appointment">
+                <h3><i class="fas fa-calendar-alt"></i> Book Your First Appointment</h3>
+                <p>Begin your pregnancy journey with expert care from our antenatal specialists.</p>
+                <a href="tel:+256747766685" class="cta-button" style="display: inline-block; margin-top: 10px;">
+                    <i class="fas fa-phone"></i> Call to Schedule
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Antenatal Care Unit</h3>
+                <p>Providing exceptional care for expecting mothers throughout their pregnancy journey.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+        
+            <div class="footer-column">
+                <h3>Hours</h3>
+                <p>Monday-Friday: 8am-6pm</p>
+                <p>Saturday: 9am-2pm</p>
+                <p>Emergency: 24/7</p>
+            </div>
+        </div>
+        
+    </footer>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
